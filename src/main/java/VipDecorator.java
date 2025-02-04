@@ -1,15 +1,15 @@
-public class BrindesDecorator extends IngressoDecorator{
-    public BrindesDecorator(Ingresso ingressoDecorado) {
-        super(ingressoDecorado);
+class VipDecorator extends IngressoDecorator {
+    public VipDecorator(Ingresso ingresso) {
+        super(ingresso);
     }
 
     @Override
-    public double preco() {
-        return ingressoDecorado.preco() + 10.0;
+    public String getDescricao() {
+        return ingresso.getDescricao() + " + Acesso VIP";
     }
 
     @Override
-    public String descricao() {
-        return ingressoDecorado.descricao() + ", com brindes especiais";
+    public double getPreco() {
+        return ingresso.getPreco() + 30.0; // Custo adicional do VIP
     }
 }

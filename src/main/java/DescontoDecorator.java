@@ -1,11 +1,15 @@
-public class IngressoBasico implements Ingresso{
-    @Override
-    public double preco() {
-        return 50.0;
+class DescontoDecorator extends IngressoDecorator {
+    public DescontoDecorator(Ingresso ingresso) {
+        super(ingresso);
     }
 
     @Override
-    public String descricao() {
-        return "Ingresso básico para o evento";
+    public String getDescricao() {
+        return ingresso.getDescricao() + " + Desconto Especial";
+    }
+
+    @Override
+    public double getPreco() {
+        return ingresso.getPreco() * 0.8; // 20% de desconto
     }
 }

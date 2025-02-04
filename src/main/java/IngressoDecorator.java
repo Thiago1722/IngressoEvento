@@ -1,15 +1,17 @@
-public class AcessoVIPDecorator extends IngressoDecorator {
-    public AcessoVIPDecorator(Ingresso ingressoDecorado) {
-        super(ingressoDecorado);
+abstract class IngressoDecorator implements Ingresso {
+    protected Ingresso ingresso;
+
+    public IngressoDecorator(Ingresso ingresso) {
+        this.ingresso = ingresso;
     }
 
     @Override
-    public double preco() {
-        return ingressoDecorado.preco() + 20.0;
+    public String getDescricao() {
+        return ingresso.getDescricao();
     }
 
     @Override
-    public String descricao() {
-        return ingressoDecorado.descricao() + ", com acesso VIP";
+    public double getPreco() {
+        return ingresso.getPreco();
     }
 }

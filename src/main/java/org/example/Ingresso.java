@@ -1,2 +1,4 @@
-package org.example;public interface Ingresso {
+interface Ingresso {
+    String getDescricao();
+    double getPreco();
 }
